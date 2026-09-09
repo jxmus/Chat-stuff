@@ -1,0 +1,49 @@
+"""
+Factory Sandbox
+A tiny test program for learning GitHub and testing ChatGPT's GitHub access.
+"""
+
+from datetime import datetime
+
+
+def factory_status(worker_name: str, tool_id: str, status: str) -> str:
+    """Return a formatted factory status line."""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    return (
+        f"[{timestamp}] "
+        f"Worker: {worker_name} | "
+        f"Tool: {tool_id} | "
+        f"Status: {status}"
+    )
+
+
+def calculate_pass_rate(passed: int, total: int) -> float:
+    """Calculate a percentage pass rate."""
+    if total <= 0:
+        return 0.0
+
+    return (passed / total) * 100
+
+
+def main() -> None:
+    print("=== Autonomous Tool/Code Production — GitHub Sandbox ===")
+
+    status = factory_status(
+        worker_name="FOREMAN 2",
+        tool_id="SANDBOX-001",
+        status="GITHUB TEST",
+    )
+
+    print(status)
+
+    passed = 7
+    total = 10
+    pass_rate = calculate_pass_rate(passed, total)
+
+    print(f"Example first-pass rate: {pass_rate:.1f}%")
+    print("GitHub sandbox is alive.")
+
+
+if __name__ == "__main__":
+    main()
